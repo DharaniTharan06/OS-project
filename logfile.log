@@ -1,0 +1,5 @@
+[2024-10-09 22:20:48] Info: Script started
+[2024-10-09 22:20:48] Info: This is a sample log entry
+[2024-10-09 22:20:48] Error: An error occurred while executing the script
+[2024-10-09 22:20:48] Warning: This is a sample warning
+[2024-10-09 22:20:48] Info: Script completed
