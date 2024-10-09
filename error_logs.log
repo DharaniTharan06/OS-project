@@ -1,0 +1,5 @@
+[    0.294954] ACPI BIOS Error (bug): Failure creating named object [\_SB.PCI0.GPP2.WLAN._STA], AE_ALREADY_EXISTS (20230628/dswload2-326)
+[    0.294962] ACPI Error: AE_ALREADY_EXISTS, During name lookup/catalog (20230628/psobject-220)
+[    0.295257] ACPI BIOS Error (bug): Failure creating named object [\_SB.I2CA.TPNL], AE_ALREADY_EXISTS (20230628/dswload2-326)
+[    0.295261] ACPI Error: AE_ALREADY_EXISTS, During name lookup/catalog (20230628/psobject-220)
+[    0.749403] RAS: Correctable Errors collector initialized.

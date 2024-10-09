@@ -1,0 +1,1 @@
+Oct 10 05:16:01 pratham-hplaptop15fc0xxx kernel: ACPI: thermal: [Firmware Bug]: Invalid critical threshold (-274000)
