@@ -35,7 +35,6 @@ if [[ ! -s $SUMMARY_FILE ]]; then
     echo "timestamp, message_type" > "$SUMMARY_FILE"
 fi
 
-# Example usage
 log_message "Info" "Script started"
 log_message "Info" "This is a sample log entry"
 log_message "Error" "An error occurred while executing the script"
