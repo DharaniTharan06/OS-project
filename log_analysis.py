@@ -1,31 +1,51 @@
 import subprocess
 
 def analyze_logs():
-    print("Analyzing kernel logs for errors...")
-    
-    # List of log files to analyze
-    log_files = ['critical_logs_2.txt', 'error_logs_2.txt']
-    
-    for log_file_name in log_files:
-        print(f"Reading from {log_file_name}...")
-        with open(log_file_name, 'r') as log_file:
-            logs = log_file.readlines()
+    try:
+        print("Starting log analysis...")
+
+        # Running createlogfile.sh script with sudo
+        print("Running createlogfile.sh with sudo...")
+        result = subprocess.run(
+            ["sudo", "bash", "./createlogfile.sh"],  # Run with sudo
+            capture_output=True,
+            text=True,
+            check=True
+        )
         
-        # Analyze each line for errors and rectify if needed
-        for line in logs:
-            
-            if "SDDM" in line:
-                print("SDDM error detected, rectifying...")
-                subprocess.call(["./rectify_alert.sh"])  # Calls your shell script to rectify SDDM error
-            elif "NetworkManager" in line:
-                print("NetworkManager error detected, rectifying...")
-                subprocess.call(["./rectify_alert.sh"])  # Calls your shell script to rectify NetworkManager error
-            elif "Plasma" in line:
-                print("Plasma error detected, rectifying...")
-                subprocess.call(["./rectify_alert.sh"])  # Calls your shell script to rectify Plasma error
-            elif "kernel" in line:
-                print("Kernel error detected, rectifying...")
-                subprocess.call(["./rectify_alert.sh"])  # Calls your shell script to rectify Kernel error
+        # Print the output of the createlogfile.sh script
+        print("createlogfile.sh output:")
+        print(result.stdout)
+
+        # Check if there was any error output from createlogfile.sh
+        if result.stderr:
+            print("Errors encountered during createlogfile.sh:")
+            print(result.stderr)
+
+        # Running parsefile_gnu.sh script with sudo
+        print("Running parsefile_gnu.sh with sudo...")
+        result = subprocess.run(
+            ["sudo", "bash", "./parsefile_gnu.sh"],  # Run with sudo
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        
+        # Print the output of the parsefile_gnu.sh script
+        print("parsefile_gnu.sh output:")
+        print(result.stdout)
+
+        # Check if there was any error output from parsefile_gnu.sh
+        if result.stderr:
+            print("Errors encountered during parsefile_gnu.sh:")
+            print(result.stderr)
+
+    except subprocess.CalledProcessError as e:
+        print(f"An error occurred while running one of the shell scripts:\n{e.stderr}")
+        print("Full output from the failed script:")
+        print(e.output)  # This will show the full output including error message from the shell script
+    except FileNotFoundError:
+        print("The shell script was not found in the current directory. Please check the path.")
 
 if __name__ == "__main__":
     analyze_logs()
