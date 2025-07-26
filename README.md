@@ -1,13 +1,12 @@
-# 📄 AI-Based Kernel Log Monitoring and Rectification System
+# 📄 Kernel Log Monitoring and Rectification System
 
-An intelligent Operating System project designed to **monitor**, **analyze**, and **automatically rectify** kernel-level log issues using AI-enhanced logic. Built with modular Python scripts, this project ensures proactive system error detection, automated resolution, and real-time admin notifications.
+An intelligent Operating System project designed to **monitor**, **analyze**, and **automatically rectify** kernel-level log issues. Built with modular Python scripts, this project ensures proactive system error detection, automated resolution, and real-time admin notifications.
 
 ---
 
 ## 🚀 Features
 
 * 📜 **Log Monitoring**: Continuously watches system log files (`/var/log/syslog`, `dmesg`, etc.)
-* 🤖 **AI-Powered Analysis**: Classifies logs using heuristics or ML models to detect anomalies and errors.
 * 🛠️ **Automated Rectification**: Executes predefined shell commands or scripts to resolve identified issues.
 * 📧 **Admin Alerts**: Sends real-time email notifications on critical errors and applied fixes.
 * 📈 **Modular Structure**: Multiple Python and Shell scripts handle different aspects of the system for scalability and clarity.
