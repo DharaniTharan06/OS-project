@@ -10,7 +10,7 @@ An intelligent Operating System project designed to **monitor**, **analyze**, an
 * 🤖 **AI-Powered Analysis**: Classifies logs using heuristics or ML models to detect anomalies and errors.
 * 🛠️ **Automated Rectification**: Executes predefined shell commands or scripts to resolve identified issues.
 * 📧 **Admin Alerts**: Sends real-time email notifications on critical errors and applied fixes.
-* 📈 **Modular Structure**: Five main Python scripts handle different aspects of the system for scalability and clarity.
+* 📈 **Modular Structure**: Multiple Python and Shell scripts handle different aspects of the system for scalability and clarity.
 
 ---
 
@@ -30,11 +30,18 @@ An intelligent Operating System project designed to **monitor**, **analyze**, an
 
 ```
 log-monitoring-ai/
-├── log_monitor.py         # Monitors logs continuously
 ├── analyze_logs.py        # Applies AI/heuristics to detect anomalies
-├── rectify_errors.py      # Executes fixes based on error types
-├── send_mail.py           # Sends email notifications
 ├── config.py              # Stores thresholds, credentials, and rule mappings
+├── log_monitor.py         # Monitors logs continuously
+├── logview.sh             # Displays recent log info for quick reference
+├── main.py                # Main entry script to orchestrate monitoring
+├── parsefile_gnu.sh       # Parses logs in GNU/Linux format
+├── rectify_alert.sh       # Executes alert-specific rectification
+├── rectify_errors.py      # Executes fixes based on error types
+├── send_email.sh          # Shell version for sending emails
+├── send_mail.py           # Sends email notifications
+├── sendmail.sh            # Alternative mail sender (legacy/support)
+├── summary.csv            # Stores summary of alerts and rectifications
 └── README.md
 ```
 
@@ -64,7 +71,7 @@ log-monitoring-ai/
 4. **Make Scripts Executable**
 
    ```bash
-   chmod +x *.py
+   chmod +x *.py *.sh
    ```
 
 5. **Run Manually or Schedule with Cron**
@@ -93,7 +100,7 @@ log-monitoring-ai/
 
 ## 📬 Sample Email Alert
 
-> Subject: 🚨 Kernel Alert: Disk Write Error Detected
+> Subject: 🚨 Kernel Alert: Disk Write Error Detected  
 > Body:
 >
 > ```
@@ -117,7 +124,3 @@ log-monitoring-ai/
 ## 👨‍💼 Authors & Credits
 
 Developed as part of an academic Operating Systems project to explore the integration of automation and AI in log monitoring and system maintenance.
-
----
-
-
